@@ -23,3 +23,29 @@
   margin: 2rem;
   width: 5rem;
 }
+.floor__line-text{
+  font-size: 1rem;
+  font-weight: bold;
+}
+.floor__buttons__up{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  width: 6rem;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+}
+.floor__buttons__down {
+  background-color: rgb(126, 26, 26); /* Green */
+  width: 6rem;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+}

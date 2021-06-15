@@ -42,7 +42,7 @@ export default function App() {
               <div className="floor" key={i}>
                 <div class="floor__buttons">
                   {i !== initialState.MAX_NUMBER_OF_FLOORS - 1 && (
-                    <button
+                    <button class="floor__buttons__up"
                       onClick={() =>
                         floorDispatch({ type: ELEVATE_UP, payload: i })
                       }
@@ -51,7 +51,7 @@ export default function App() {
                     </button>
                   )}
                   {i !== 0 && (
-                    <button
+                    <button class="floor__buttons__down"
                       onClick={() =>
                         floorDispatch({ type: ELEVATE_UP, payload: i })
                       }
@@ -62,7 +62,7 @@ export default function App() {
                 </div>
 
                 <div class="floor__line">
-                  <div class="text">Floor {i}</div>
+                  <div class="floor__line-text">Floor {i}</div>
                 </div>
               </div>
             </>
