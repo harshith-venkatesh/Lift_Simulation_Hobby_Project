@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.floor {
+  display: flex;
+  justify-content: space-between;
+  height: 12rem;
+  border-bottom: 1px solid #111;
+}
+.lift {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  height: 6rem;
+  width: 4rem;
+  background: rgb(0, 153, 255);
+  bottom: 6rem;
+  position: relative;
+  transition: bottom ease 1s;
+}
+.floor__buttons {
+  margin: 2rem;
+  width: 5rem;
+}
