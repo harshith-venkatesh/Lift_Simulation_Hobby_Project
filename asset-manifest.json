@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Lift_Simulation_Hobby_Project/static/css/main.041455ff.chunk.css",
-    "main.js": "/Lift_Simulation_Hobby_Project/static/js/main.7faf2a9f.chunk.js",
-    "main.js.map": "/Lift_Simulation_Hobby_Project/static/js/main.7faf2a9f.chunk.js.map",
+    "main.css": "/Lift_Simulation_Hobby_Project/static/css/main.de99410e.chunk.css",
+    "main.js": "/Lift_Simulation_Hobby_Project/static/js/main.12072849.chunk.js",
+    "main.js.map": "/Lift_Simulation_Hobby_Project/static/js/main.12072849.chunk.js.map",
     "runtime-main.js": "/Lift_Simulation_Hobby_Project/static/js/runtime-main.12112645.js",
     "runtime-main.js.map": "/Lift_Simulation_Hobby_Project/static/js/runtime-main.12112645.js.map",
     "static/js/2.7bb43770.chunk.js": "/Lift_Simulation_Hobby_Project/static/js/2.7bb43770.chunk.js",
     "static/js/2.7bb43770.chunk.js.map": "/Lift_Simulation_Hobby_Project/static/js/2.7bb43770.chunk.js.map",
     "index.html": "/Lift_Simulation_Hobby_Project/index.html",
-    "static/css/main.041455ff.chunk.css.map": "/Lift_Simulation_Hobby_Project/static/css/main.041455ff.chunk.css.map",
+    "static/css/main.de99410e.chunk.css.map": "/Lift_Simulation_Hobby_Project/static/css/main.de99410e.chunk.css.map",
     "static/js/2.7bb43770.chunk.js.LICENSE.txt": "/Lift_Simulation_Hobby_Project/static/js/2.7bb43770.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.12112645.js",
     "static/js/2.7bb43770.chunk.js",
-    "static/css/main.041455ff.chunk.css",
-    "static/js/main.7faf2a9f.chunk.js"
+    "static/css/main.de99410e.chunk.css",
+    "static/js/main.12072849.chunk.js"
   ]
 }
