@@ -9,14 +9,57 @@ const initialState = {
   MAX_NUMBER_OF_FLOORS: 5
 };
 
+const checkUpOrDownFloor = (floor) => floor>0?floor:-(floor)
+
+const liftSimulationCSS = (lift,payload,floorDifference) => {
+  lift.style.bottom = 6 + payload * 12 + "rem";
+  lift.style.transition =  `bottom ease ${checkUpOrDownFloor(floorDifference)}s`;
+}
+
+const arrangeLiftNumbers = (liftNumbers) => [...Array(liftNumbers).keys()].reverse()
+
+
+const LiftSection = ({floorNumber,floorDispatch}) => {
+  return(
+    <>
+              <div className="floor" key={floorNumber}>
+                <div class="floor__buttons">
+                  {floorNumber !== initialState.MAX_NUMBER_OF_FLOORS - 1 && (
+                    <button class="floor__buttons__up"
+                      onClick={() =>
+                        floorDispatch({ type: ELEVATE_UP, payload: floorNumber })
+                      }
+                    >
+                      Up
+                    </button>
+                  )}
+                  {floorNumber !== 0 && (
+                    <button class="floor__buttons__down"
+                      onClick={() =>
+                        floorDispatch({ type: ELEVATE_UP, payload: floorNumber })
+                      }
+                    >
+                      Down
+                    </button>
+                  )}
+                </div>
+                <div class="floor__line">
+                  <div class="floor__line-text">Floor {floorNumber}</div>
+                </div>
+              </div>
+            </>
+  )
+}
+
 const floorReducer = (state, action) => {
   const lift = document.querySelector(".lift");
+  const floorDifference = action.payload - state.CURRENT_POSITION_OF_FLOOR
   switch (action.type) {
     case ELEVATE_UP:
-      lift.style.bottom = 6 + action.payload * 12 + "rem";
+      liftSimulationCSS(lift,action.payload,floorDifference)
       return { ...state, CURRENT_POSITION_OF_FLOOR: action.payload };
     case ELEVATE_DOWN:
-      lift.style.bottom = 6 + action.payload * 12 + "rem";
+      liftSimulationCSS(lift,action.payload,floorDifference)
       return { ...state, CURRENT_POSITION_OF_FLOOR: action.payload };
     default:
       return state;
@@ -24,48 +67,16 @@ const floorReducer = (state, action) => {
 };
 
 export default function App() {
-  // useEffect(() => {
-  //   const initialMaxFloor = Number(
-  //     window.prompt("Mention the number of floor to be simulated?", "")
-  //   );
-  //   initialState.MAX_NUMBER_OF_FLOORS = initialMaxFloor ?? 4;
-  // }, []);
+  
   const [state, floorDispatch] = useReducer(floorReducer, initialState);
 
   return (
     <div className="App">
       <h1>Lift Simulation</h1>
       <div>
-        {[...Array(state.MAX_NUMBER_OF_FLOORS).keys()].reverse().map((i) => {
+        {arrangeLiftNumbers(state.MAX_NUMBER_OF_FLOORS).map((i) => {
           return (
-            <>
-              <div className="floor" key={i}>
-                <div class="floor__buttons">
-                  {i !== initialState.MAX_NUMBER_OF_FLOORS - 1 && (
-                    <button class="floor__buttons__up"
-                      onClick={() =>
-                        floorDispatch({ type: ELEVATE_UP, payload: i })
-                      }
-                    >
-                      Up
-                    </button>
-                  )}
-                  {i !== 0 && (
-                    <button class="floor__buttons__down"
-                      onClick={() =>
-                        floorDispatch({ type: ELEVATE_UP, payload: i })
-                      }
-                    >
-                      Down
-                    </button>
-                  )}
-                </div>
-
-                <div class="floor__line">
-                  <div class="floor__line-text">Floor {i}</div>
-                </div>
-              </div>
-            </>
+            <LiftSection floorNumber={i} floorDispatch={floorDispatch}/>
           );
         })}
       </div>

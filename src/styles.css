@@ -17,7 +17,6 @@
   background: rgb(0, 153, 255);
   bottom: 6rem;
   position: relative;
-  transition: bottom ease 1s;
 }
 .floor__buttons {
   margin: 2rem;
